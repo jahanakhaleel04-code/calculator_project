@@ -4,7 +4,20 @@ let buttons = document.querySelectorAll('.opt_btn');
 let first_num = null;
 let operator = null;
 
-
+input.addEventListener('keydown', (e) => {
+    // console.log(e.key);
+    const allowedKeys = ['Backspace','Enter','Delete'];
+    if(!isNaN(e.key))
+    {
+        // alert('Enter a Number');
+        return;
+    }
+    if(allowedKeys.includes(e.key))
+    {
+        return;
+    }
+    e.preventDefault();
+})
 // console.log(buttons);
 buttons.forEach(btn => {
     btn.addEventListener('click',() => {
